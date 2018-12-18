@@ -50,104 +50,104 @@ import message from 'message/index';
 import CONSTANT from 'helper/constant';
 import ajax from 'helper/ajax';
 
-  export default {
-    name: 'WAuthApplay',
-    data() {
-      return {
-        mobile: '',
-        nickname: '',
-        tipShow: false,
-        loading: false,
-      };
+export default {
+  name: 'WAuthApplay',
+  data() {
+    return {
+      mobile: '',
+      nickname: '',
+      tipShow: false,
+      loading: false,
+    };
+  },
+  props: {
+    action: {
+      type: String,
+      default: '',
     },
-    props: {
-      action: {
-        type: String,
-        default: '',
-      },
-      auth: String,
-      company: {
-        type: String,
-        default: '',
-      },
-      success: {
-        type: Function,
-        default: () => {},
+    auth: String,
+    company: {
+      type: String,
+      default: '',
+    },
+    success: {
+      type: Function,
+      default: () => {},
+    },
+  },
+  computed: {
+    authValue() {
+      return this.auth;
+    },
+    companyValue() {
+      return this.company;
+    },
+  },
+  methods: {
+    checkValue() {
+      if (!this.nickname) {
+        message.error({
+          content: '请填写您的称呼',
+        });
+        return false;
+      }
+      if (!this.mobile) {
+        message.error({
+          content: '请填写您的联系电话',
+        });
+        return false;
+      }
+      return true;
+    },
+    confirmBtn() {
+      if (this.checkValue()) {
+        const dataForPost = {
+          nickname: this.nickname,
+          mobile: this.mobile,
+          company: this.companyValue,
+          permit_path: this.authValue,
+          referrer: document.referrer,
+        };
+
+        this.isLoading();
+
+        ajax({
+          type: 'POST',
+          action: this.action,
+          data: JSON.stringify(dataForPost),
+          headers: {
+            Authorization: window.$cookie.get(CONSTANT.EVENT_TOKE),
+          },
+          onSuccess: (res) => {
+            this.noLoading();
+            if (res.code === CONSTANT.AJAX_SUCCESS) {
+              this.tipShow = true;
+            } else {
+              message.error({
+                content: res.message,
+              });
+            }
+          },
+          onError: (err, response) => {
+            this.noLoading();
+            message.error({
+              content: response.message,
+            });
+          },
+        });
       }
     },
-    computed: {
-      authValue() {
-        return this.auth;
-      },
-      companyValue() {
-        return this.company;
-      },
+    closeFn() {
+      this.tipShow = false;
+      this.success();
+      this.$emit('success');
     },
-    methods: {
-      checkValue() {
-        if (!this.nickname) {
-          message.error({
-            content: '请填写您的称呼',
-          });
-          return false;
-        }
-        if (!this.mobile) {
-          message.error({
-            content: '请填写您的联系电话',
-          });
-          return false;
-        }
-        return true;
-      },
-      confirmBtn() {
-        if (this.checkValue()) {
-          const dataForPost = {
-            nickname: this.nickname,
-            mobile: this.mobile,
-            company: this.companyValue,
-            permit_path: this.authValue,
-            referrer: document.referrer,
-          };
-
-          this.isLoading();
-
-          ajax({
-            type: 'POST',
-            action: this.action,
-            data: JSON.stringify(dataForPost),
-            headers: {
-              Authorization: window.$cookie.get(CONSTANT.EVENT_TOKE),
-            },
-            onSuccess: (res) => {
-              this.noLoading();
-              if (res.code === CONSTANT.AJAX_SUCCESS) {
-                this.tipShow = true;
-              } else {
-                message.error({
-                  content: res.message,
-                });
-              }
-            },
-            onError: (err, response) => {
-              this.noLoading();
-              message.error({
-                content: response.message,
-              });
-            },
-          });
-        }
-      },
-      closeFn() {
-        this.tipShow = false;
-        this.success();
-        this.$emit('success');
-      },
-      isLoading() {
-        this.loading = true;
-      },
-      noLoading() {
-        this.loading = false;
-      },
+    isLoading() {
+      this.loading = true;
     },
-  };
+    noLoading() {
+      this.loading = false;
+    },
+  },
+};
 </script>

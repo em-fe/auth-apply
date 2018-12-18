@@ -16,7 +16,6 @@
     "eslint": "eslint --ext .js,.vue emauthapplay --fix",
     "stylelint": "stylelint ./emauthapplay/assets/css/*.scss --fix",
     "lint": "npm run eslint && npm run stylelint",
-    "lint-staged": "lint-staged",
     "test": "jest --config jest.conf.js --no-cache --verbose",
     "codecov": "codecov ./coverage/clover.xml",
     "prepublishOnly": "npm run build",
@@ -79,7 +78,6 @@
     "http-proxy-middleware": "^0.18.0",
     "jest": "^22.4.3",
     "jest-serializer-vue": "^1.0.0",
-    "lint-staged": "^7.0.4",
     "markdown-it": "^8.4.1",
     "markdown-it-anchor": "^4.0.0",
     "markdown-it-container": "^2.0.0",
@@ -131,14 +129,6 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "lint-staged": {
-    "./emauthapplay/**/*.{vue,js}": [
-      "npm run eslint"
-    ],
-    "./emauthapplay/assets/css/*.scss": [
-      "npm run stylelint"
-    ]
-  },
   "pre-commit": [
     "eslint",
     "stylelint"
