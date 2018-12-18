@@ -1,17 +1,17 @@
 ---
 home: true
 title: '权限申请'
-description: 'Vue.js 2.x B 端权限申请组件'
+description: 'B 端权限申请组件'
 heroImage: /logo.png
 actionText: 快速上手
-actionLink: /authapply/zh-cn
+actionLink: /authapplay
 footer: MIT Licensed | Copyright © 2018-present 李梦龙
 ---
 
-### 安装
+### 安裝
 
 ``` bash
-yarn add emauthapply
+yarn add emauthapplay
 ```
 
 ::: warning 注意

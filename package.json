@@ -1,26 +1,26 @@
 {
-  "name": "emauthapply",
-  "version": "0.2.0",
-  "description": "em 登录弹框业务组件",
+  "name": "emauthapplay",
+  "version": "0.0.0",
+  "description": "Vue 2.x B 端权限申请",
   "author": "李梦龙 <649076408@qq.com>",
-  "main": "dist/emauthapply.js",
-  "unpkg": "dist/emauthapply.js",
+  "main": "dist/emauthapplay.js",
+  "unpkg": "dist/emauthapplay.js",
   "files": [
     "dist",
-    "emauthapply"
+    "emauthapplay"
   ],
   "scripts": {
-    "start": "vuepress dev authapply",
-    "build:site": "export GH=1 && vuepress build authapply",
-    "build": "cross-env BABEL_ENV=production && node build/build.water.js && gulp --gulpfile build/gulpfile.js",
-    "eslint": "eslint --ext .js,.vue site authapply --fix",
-    "stylelint": "stylelint site/**/*.scss authapply/**/*.scss",
+    "start": "vuepress dev site",
+    "build:site": "export GH=1 && vuepress build site",
+    "build": "export BABEL_ENV=production && node build/build.water.js && gulp --gulpfile build/gulpfile.js",
+    "eslint": "eslint --ext .js,.vue emauthapplay --fix",
+    "stylelint": "stylelint ./emauthapplay/assets/css/*.scss --fix",
     "lint": "npm run eslint && npm run stylelint",
     "lint-staged": "lint-staged",
     "test": "jest --config jest.conf.js --no-cache --verbose",
     "codecov": "codecov ./coverage/clover.xml",
-    "deploy-gh": "yarn build:site && bash scripts/deploy-gh.sh",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "deploy-gh": "yarn build:site && bash scripts/deploy-gh.sh"
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
@@ -53,7 +53,7 @@
     "css-loader": "^0.28.11",
     "em-cookie": "^1.0.6",
     "em-jsonp": "^1.0.4",
-    "em-normalize": "^1.0.2",
+    "em-underline": "^1.2.2",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-friendly-formatter": "^4.0.0",
@@ -109,6 +109,7 @@
     "vue-loader": "^14.2.2",
     "vue-markdown-loader": "^2.4.1",
     "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.16",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
     "vue-test-utils": "^1.0.0-beta.11",
@@ -131,17 +132,15 @@
     "not ie <= 8"
   ],
   "lint-staged": {
-    "authapply/**/*.vue": [
+    "./emauthapplay/**/*.{vue,js}": [
       "npm run eslint"
     ],
-    "authapply/**/*.js": [
-      "npm run eslint"
-    ],
-    "authapply/**/*.scss": [
+    "./emauthapplay/assets/css/*.scss": [
       "npm run stylelint"
     ]
   },
   "pre-commit": [
-    "lint-staged"
+    "eslint",
+    "stylelint"
   ]
 }

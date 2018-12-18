@@ -7,20 +7,17 @@ var utils = require('./utils');
 
 var baseWebpackConfig = require('./webpack.water.base.conf');
 
-
 var webpackConfig = merge(baseWebpackConfig, {
   devtool: '#source-map',
   output: {
-    // filename: utils.outname() + '.js',
-    filename: 'authapply.js',
-    library: 'authapply',
+    filename: utils.outname() + '.js',
   },
   plugins: [
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../authapply'),
+        from: path.resolve(__dirname, '../emauthapplay'),
         to: '',
-        ignore: ['.*', '*.md', '.vuepress/**/*', '*.test.*']
+        ignore: ['.*', '*.md', '.vuepress/**/*', '*.test.*', 'emauthapplay.js']
       }
     ]),
   ]

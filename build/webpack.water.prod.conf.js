@@ -8,13 +8,10 @@ var CompressionWebpackPlugin = require('compression-webpack-plugin');
 var utils = require('./utils');
 var baseWebpackConfig = require('./webpack.water.base.conf');
 
-
 var webpackConfig = merge(baseWebpackConfig, {
   devtool: '#source-map',
   output: {
-    // filename: utils.outname() + '.min.js',
-    filename: 'authapply.min.js',
-    library: 'authapply',
+    filename: utils.outname() + '.min.js',
   },
   mode: 'production',
   optimization: {

@@ -17,18 +17,22 @@ function resolve (dir) {
 
 module.exports = {
   cache: true,
-  entry: `./${utils.outname()}/authapply.js`,
+  entry: `./${utils.outname()}/${utils.outname()}.js`,
   mode: 'development',
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist/',
     libraryTarget: 'umd',
+    library: utils.outname(),
     umdNamedDefine: true
   },
   resolve: {
     extensions: ['.js', '.md', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
+      helper: resolve('emauthapplay/helper'),
+      assets: resolve('emauthapplay/assets'),
+      message: resolve('emauthapplay/core/message'),
     }
   },
   performance: {

@@ -1,8 +1,8 @@
 // 组件
-import WAuthApply from './authapply/index';
+import WAuthApplay from './core/authapplay/index';
 
 const waterCpt = {
-  WAuthApply,
+  WAuthApplay,
 };
 
 const install = (Vue) => {
@@ -19,6 +19,5 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.0.0',
   install,
 };
