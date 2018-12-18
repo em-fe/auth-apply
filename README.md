@@ -15,7 +15,7 @@ yarn add emauthapplay
 ## 用法
 
 ``` bash
-<w-menu></w-menu>
+<w-authapplay></w-authapplay>
 ```
 
 ## 说明
