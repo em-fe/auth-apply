@@ -1,9 +1,7 @@
 # B 端权限申请
 > 无权限的时候其中一种情况是跳转到带有权限申请组件的页面中，解决导航定位问题。
 
-<div class="demo">
-  <w-auth-apply authValue="/homepage" action="http://gateway.inner.evente.cn:8000/home/api/org/applies/permit"></w-auth-apply>
-</div>
+<w-auth-apply authValue="/homepage" action="http://gateway.inner.evente.cn:8000/home/api/org/applies/permit"></w-auth-apply>
 
 ## API
 
@@ -39,10 +37,4 @@ export default {
 <style lang="scss">
 @import '../emauthapply/assets/css/authapply.scss';
 @import '../emauthapply/assets/css/message.scss';
-
-.demo {
-  padding: 16px;
-  border: 1px solid #dbdbdb;
-  background: #999;
-}
 </style>
