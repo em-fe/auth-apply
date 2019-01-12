@@ -3,18 +3,18 @@
   "version": "1.0.0-alpha.2",
   "description": "Vue 2.x B 端权限申请",
   "author": "李梦龙 <649076408@qq.com>",
-  "main": "dist/emauthapplay.js",
-  "unpkg": "dist/emauthapplay.js",
+  "main": "dist/emauthapply.js",
+  "unpkg": "dist/emauthapply.js",
   "files": [
     "dist",
-    "emauthapplay"
+    "emauthapply"
   ],
   "scripts": {
     "start": "vuepress dev site",
     "build:site": "export GH=1 && vuepress build site",
     "build": "export BABEL_ENV=production && node build/build.water.js && gulp --gulpfile build/gulpfile.js",
-    "eslint": "eslint --ext .js,.vue emauthapplay --fix",
-    "stylelint": "stylelint ./emauthapplay/assets/css/*.scss --fix",
+    "eslint": "eslint --ext .js,.vue emauthapply --fix",
+    "stylelint": "stylelint ./emauthapply/assets/css/*.scss --fix",
     "lint": "npm run eslint && npm run stylelint",
     "test": "jest --config jest.conf.js --no-cache --verbose",
     "codecov": "codecov ./coverage/clover.xml",
