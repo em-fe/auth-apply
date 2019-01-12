@@ -1,6 +1,6 @@
 {
-  "name": "emauthapplay",
-  "version": "1.0.0-alpha.1",
+  "name": "emauthapply",
+  "version": "0.0.0",
   "description": "Vue 2.x B 端权限申请",
   "author": "李梦龙 <649076408@qq.com>",
   "main": "dist/emauthapplay.js",

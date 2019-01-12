@@ -1,44 +1,44 @@
 <template>
-  <div class="w-authapplay">
-    <div class="w-authapplay-desc">
-      <img :src="require('assets/img/error.png')" class="w-authapplay-desc-img">
-      <div class="w-authapplay-desc-main">
-        <p class="w-authapplay-desc-desc">您好，此功能属于高级套餐功能，您还没有使用权限。</p>
-        <div class="w-authapplay-desc-phone">
+  <div class="w-authapply">
+    <div class="w-authapply-desc">
+      <img :src="errorImage" class="w-authapply-desc-img">
+      <div class="w-authapply-desc-main">
+        <p class="w-authapply-desc-desc">您好，此功能属于高级套餐功能，您还没有使用权限。</p>
+        <div class="w-authapply-desc-phone">
           <div>如需开通请致电：</div>
           <div>
-            <p class="w-authapplay-desc-text">400 - 0630260 客服</p>
-            <p class="w-authapplay-desc-text">133 3104 3623 王先生</p>
-            <p class="w-authapplay-desc-text">130 5107 2968 薛先生</p>
+            <p class="w-authapply-desc-text">400 - 0630260 客服</p>
+            <p class="w-authapply-desc-text">133 3104 3623 王先生</p>
+            <p class="w-authapply-desc-text">130 5107 2968 薛先生</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="w-authapplay-apply">
-      <img :src="require('assets/img/link.png')" class="w-authapplay-line w-authapplay-line-left">
-      <img :src="require('assets/img/link.png')" class="w-authapplay-line w-authapplay-line-right">
-      <div class="w-authapplay-title">
+    <div class="w-authapply-apply">
+      <img :src="require('assets/img/link.png')" class="w-authapply-line w-authapply-line-left">
+      <img :src="require('assets/img/link.png')" class="w-authapply-line w-authapply-line-right">
+      <div class="w-authapply-title">
         <img :src="require('assets/img/custservice.svg')">
-        <span class="w-authapplay-title-text">请留下您的信息，我们会尽快和您联系。</span>
+        <span class="w-authapply-title-text">请留下您的信息，我们会尽快和您联系。</span>
       </div>
-      <div class="w-authapplay-form">
-        <p class="w-authapplay-form-name">如何称呼您？</p>
-        <input type="text" placeholder="请输入" class="w-authapplay-form-input" v-model="nickname"></input>
+      <div class="w-authapply-form">
+        <p class="w-authapply-form-name">如何称呼您？</p>
+        <input type="text" placeholder="请输入" class="w-authapply-form-input" v-model="nickname"></input>
       </div>
-      <div class="w-authapplay-form">
-        <p class="w-authapplay-form-contact">如何联系您？</p>
-        <input type="text" placeholder="请输入" class="w-authapplay-form-input" v-model="mobile"></input>
+      <div class="w-authapply-form">
+        <p class="w-authapply-form-contact">如何联系您？</p>
+        <input type="text" placeholder="请输入" class="w-authapply-form-input" v-model="mobile"></input>
       </div>
-      <button class="w-authapplay-submit" :class="{[`w-authapplay-submit-loading`]: loading}" @click="confirmBtn">提交申请</button>
+      <button class="w-authapply-submit" :class="{[`w-authapply-submit-loading`]: loading}" @click="confirmBtn">提交申请</button>
     </div>
     <!-- 提示弹框 start -->
-    <div class="w-authapplay-modal" v-if="tipShow">
-      <div class="w-authapplay-modal-wrap">
-        <div class="w-authapplay-modal-header">
-          <div class="w-authapplay-modal-inner">提示</div>
-          <div class="w-authapplay-modal-close" @click="closeFn">＋</div>
+    <div class="w-authapply-modal" v-if="tipShow">
+      <div class="w-authapply-modal-wrap">
+        <div class="w-authapply-modal-header">
+          <div class="w-authapply-modal-inner">提示</div>
+          <div class="w-authapply-modal-close" @click="closeFn">＋</div>
         </div>
-        <div class="w-authapplay-modal-main">您的申请已提交，我们会尽快安排处理。</div>
+        <div class="w-authapply-modal-main">您的申请已提交，我们会尽快安排处理。</div>
       </div>
     </div>
     <!-- 提示弹框 end -->
@@ -49,11 +49,13 @@ import 'em-cookie';
 import message from 'message/index';
 import CONSTANT from 'helper/constant';
 import ajax from 'helper/ajax';
+import errorImage from './errorimage';
 
 export default {
   name: 'WAuthApplay',
   data() {
     return {
+      errorImage,
       mobile: '',
       nickname: '',
       tipShow: false,

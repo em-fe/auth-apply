@@ -2,7 +2,7 @@ const path = require('path');
 
 const resolve = p => path.resolve(__dirname, '../../', p);
 
-const base = process.env.GH ? '/auth-applay/' : '/'
+const base = process.env.GH ? '/auth-apply/' : '/'
 
 module.exports = {
   title: '权限申请',
@@ -15,14 +15,14 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        helper: resolve('emauthapplay/helper'),
-        assets: resolve('emauthapplay/assets'),
-        message: resolve('emauthapplay/core/message'),
+        helper: resolve('emauthapply/helper'),
+        assets: resolve('emauthapply/assets'),
+        message: resolve('emauthapply/core/message'),
       }
     }
   },
   themeConfig: {
-    repo: 'em-fe/authapplay',
+    repo: 'em-fe/auth-apply',
     editLinks: false,
     docsDir: 'site',
     lastUpdated: '上次更新', // string | boolean
@@ -30,7 +30,7 @@ module.exports = {
     editLinkText: '帮助我们改善此页面！',
     sidebar: [
       '/',
-      '/authapplay',
+      '/authapply',
     ]
   }
 }

@@ -15,9 +15,9 @@ var webpackConfig = merge(baseWebpackConfig, {
   plugins: [
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../emauthapplay'),
+        from: path.resolve(__dirname, '../emauthapply'),
         to: '',
-        ignore: ['.*', '*.md', '.vuepress/**/*', '*.test.*', 'emauthapplay.js']
+        ignore: ['.*', '*.md', '.vuepress/**/*', '*.test.*', 'emauthapply.js']
       }
     ]),
   ]

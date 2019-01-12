@@ -2,7 +2,7 @@
 > 无权限的时候其中一种情况是跳转到带有权限申请组件的页面中，解决导航定位问题。
 
 <div class="demo">
-  <w-auth-applay authValue="/homepage" action="http://gateway.inner.evente.cn:8000/home/api/org/applies/permit"></w-auth-applay>
+  <w-auth-apply authValue="/homepage" action="http://gateway.inner.evente.cn:8000/home/api/org/applies/permit"></w-auth-apply>
 </div>
 
 ## API
@@ -23,7 +23,7 @@
 |success|成功之后关闭弹框的回调|无|
 
 <script>
-import WAuthApplay from '../emauthapplay/core/authapplay/authapplay';
+import WAuthApply from '../emauthapply/core/authapply/authapply';
 
 export default {
   data() {
@@ -31,14 +31,14 @@ export default {
     };
   },
   components: {
-    WAuthApplay,
+    WAuthApply,
   },
 }
 </script>
 
 <style lang="scss">
-@import '../emauthapplay/assets/css/authapplay.scss';
-@import '../emauthapplay/assets/css/message.scss';
+@import '../emauthapply/assets/css/authapply.scss';
+@import '../emauthapply/assets/css/message.scss';
 
 .demo {
   padding: 16px;

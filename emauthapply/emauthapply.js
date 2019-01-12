@@ -1,8 +1,8 @@
 // 组件
-import WAuthApplay from './core/authapplay/index';
+import WAuthApply from './core/authapply/index';
 
 const waterCpt = {
-  WAuthApplay,
+  WAuthApply,
 };
 
 const install = (Vue) => {

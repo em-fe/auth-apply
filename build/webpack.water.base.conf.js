@@ -30,9 +30,9 @@ module.exports = {
     extensions: ['.js', '.md', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      helper: resolve('emauthapplay/helper'),
-      assets: resolve('emauthapplay/assets'),
-      message: resolve('emauthapplay/core/message'),
+      helper: resolve('emauthapply/helper'),
+      assets: resolve('emauthapply/assets'),
+      message: resolve('emauthapply/core/message'),
     }
   },
   performance: {
