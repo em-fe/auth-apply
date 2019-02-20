@@ -1,6 +1,14 @@
 <template>
   <div class="w-authapply-box">
-    <div class="w-authapply">
+    <div v-if="type === 'staff'" class="w-authapply2">
+      <div class="w-authapply2-desc">
+        <img :src="errorImage" class="w-authapply2-desc-img">
+        <div class="w-authapply2-desc-main">
+          <p class="w-authapply2-desc-desc">您还没有使用权限。</p>
+        </div>
+      </div>
+    </div>
+    <div v-else class="w-authapply">
       <div class="w-authapply-desc">
         <img :src="errorImage" class="w-authapply-desc-img">
         <div class="w-authapply-desc-main">
@@ -77,6 +85,10 @@ export default {
     success: {
       type: Function,
       default: () => {},
+    },
+    type: {
+      type: String,
+      default: 'staff',
     },
   },
   computed: {

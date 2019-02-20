@@ -13,6 +13,37 @@
   }
 }
 
+.w-authapply2 {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-desc {
+    padding-top: 62px;
+    padding-left: 56px;
+    display: flex;
+    box-sizing: border-box;
+
+    &-img {
+      height: 98.5px;
+      width: 124px;
+    }
+
+    &-main {
+      font-size: 14px;
+      color: #333;
+      margin-left: 21px;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
 .w-authapply {
   width: 600px;
   position: absolute;
