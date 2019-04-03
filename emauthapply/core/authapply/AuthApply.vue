@@ -17,7 +17,7 @@
             <div>如需开通请致电：</div>
             <div>
               <p class="w-authapply-desc-text">400 - 0630260 客服</p>
-              <p class="w-authapply-desc-text">133 3104 3623 王先生</p>
+              <p class="w-authapply-desc-text">133 3104 3623 于先生</p>
               <p class="w-authapply-desc-text">130 5107 2968 薛先生</p>
             </div>
           </div>
